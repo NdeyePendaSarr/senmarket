@@ -1,0 +1,15 @@
+# Environnement Python : recréable avec requirements.txt
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Créé par pip install -e . : régénéré à chaque installation
+*.egg-info/
+
+# Données et journaux : produits par le code, recréables, trop lourds
+data/
+logs/
+
+# Secrets : jamais dans Git
+.env
