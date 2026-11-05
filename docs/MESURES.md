@@ -22,3 +22,11 @@ sys	0m0.584s
 Mem:           7.6Gi       1.6Gi       1.8Gi       117Mi       4.5Gi       6.0Gi
 Swap:          2.0Gi          0B       2.0Gi
 ```
+
+### Mesure 2026-11-05 — commit 95642d2
+Commande : `python -m senmarket.generation --run-date 2026-11-06 --rows 200000 --defauts tous --ecraser` (code de sortie : 0)
+```
+cœurs : 12
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.06
+	Maximum resident set size (kbytes): 413920
+```
