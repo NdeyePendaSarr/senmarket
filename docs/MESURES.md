@@ -49,3 +49,11 @@ et `... commandes.csv --dates date_commande --colonne date_commande`
 
 Type de `date_commande` : csv/json/jsonl `str`, parquet `datetime64[us]`.
 Lecture par morceaux (chunksize) : identique à la lecture complète.
+
+Types inférés par Pandas pour `lignes_commande`, identiques dans les 4 formats :
+ligne_commande_id, commande_id, produit_id : str ; quantite, prix_unitaire_xof : int64 ;
+montant_xof : str (défauts valeurs_manquantes et montant_texte du chapitre 2 ; à convertir au chapitre 4).
+
+2e exécution (mêmes commandes) : lignes_commande csv 0.037, json 0.773, jsonl 0.918, parquet 0.029 s ;
+commandes csv 0.010, json 0.225, jsonl 0.240, parquet 0.013 s.
+Constat : JSON reste très loin derrière ; sur les petits fichiers, les valeurs absolues varient d'une exécution à l'autre.
