@@ -30,3 +30,22 @@ cœurs : 12
 	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:07.06
 	Maximum resident set size (kbytes): 413920
 ```
+
+### Formats de fichiers (SM-004), lecture à chaud, médiane de 5, 1re lecture ignorée
+Machine : 12 threads, pandas 3.1.1, pyarrow 26.0.1. Partition 2026-11-06.
+Commandes : `python -m senmarket.formats data/raw/date=2026-11-06/lignes_commande.csv`
+et `... commandes.csv --dates date_commande --colonne date_commande`
+
+| Fichier | Format | Temps médian (s) | Taille (Mo) |
+|---|---|---|---|
+| lignes_commande | csv | 0.040 | 9.2 |
+| lignes_commande | json | 0.863 | 29.7 |
+| lignes_commande | jsonl | 0.936 | 29.7 |
+| lignes_commande | parquet | 0.029 | 2.8 |
+| commandes | csv | 0.017 | 3.1 |
+| commandes | json | 0.263 | 8.7 |
+| commandes | jsonl | 0.252 | 8.7 |
+| commandes | parquet | 0.020 | 0.9 |
+
+Type de `date_commande` : csv/json/jsonl `str`, parquet `datetime64[us]`.
+Lecture par morceaux (chunksize) : identique à la lecture complète.
