@@ -77,3 +77,13 @@ commandes `annulee`.
 | `produits` | 40 |
 | `avis` | N / 10 |
 | `navigation` | 2 × N |
+
+## Décisions de génération (chapitre 2, étape 2a)
+
+- `session_id` : `SES` + 8 chiffres.
+- Statuts de commande de la vérité : 70 % `livree`, 12 % `expediee`, 10 % `en_cours`, 8 % `annulee`.
+- Avis : 10 % des commandes `livree`, un seul produit parmi ceux de la commande.
+- `email` absent pour 10 % des clients, `telephone` pour 5 %, dès la vérité (champs facultatifs).
+- Promotion : 20 % des lignes, prix payé entre 90 % et 110 % du catalogue, arrondi à 5 XOF.
+- Écarts métier volontaires (pas des défauts) : ~2 % des commandes sans paiement, ~1 % des paiements dont
+  le montant diffère de la somme des lignes.
